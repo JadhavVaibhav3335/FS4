@@ -1,0 +1,18 @@
+2.ON CALLBACK
+Write an asynchronous function named delayedMessage that takes a
+callback function as an argument. Inside the function, use setTimeout to
+delay execution for 2 seconds, then invoke the callback function with the
+message "Delayed message".Call the delayedMessage function and provide a callback function to handle the delayed message. Display the received message in the console.
+-->
+
+function delayedMessage(callback) {
+    setTimeout(() => {
+        const message = "Delayed message";
+        callback(message);
+    }, 2000); // 2 sec delay
+}
+
+function handleMessage(message) {
+    console.log(message);
+}
+delayedMessage(handleMessage);
